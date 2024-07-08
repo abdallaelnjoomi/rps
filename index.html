@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    body {
+      background-color: rgb(25, 25, 25);
+    }
+
+    h1 {
+      color: aliceblue;
+    }
+
+    .container {
+      display: flex;
+      gap: 50px;
+      position: absolute;
+      left: 8%;
+      top: 10%;
+    }
+
+    .scissors>button {
+      padding: 10px 15px;
+    }
+
+    .rock>button {
+      padding: 10px 13.5px;
+    }
+
+    button {
+      background: none;
+      border: none;
+      font-size: xx-large;
+      border: 2px solid rgb(255, 255, 255);
+      padding: 10px;
+      border-radius: 50%;
+    }
+
+    #result {
+      color: rgb(255, 255, 255);
+      font-size: xx-large;
+      position: absolute;
+      top: 25%;
+      left: 9%;
+    }
+
+    #shows {
+      color: rgb(255, 255, 255);
+      font-size: xx-large;
+      position: absolute;
+      top: 30%;
+      left: 9%;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Rock Paper Scissors</h1>
+  <div class="container">
+
+    <div class="scissors">
+      <button onclick="
+      const computer = Math.random()*3;
+      let computerMove = '';
+      let result = '';
+
+      if (computer >= 1 && computer < 2){
+      computerMove = '✊';
+      }
+      else if (computer >= 2 ){
+        computerMove = '🖐️';
+      }
+      else {
+        computerMove = '✌️';
+      }
+
+
+      if (computerMove === '✊') {
+        result = 'You Lose.';
+      } else if (computerMove === '🖐️') {
+        result = 'You Win.';
+      }else {
+        result = 'Tie.';
+      }
+      document.getElementById('result').innerText = result;
+      document.getElementById('shows').innerText = `You ✌️ ${computerMove} Computer`;
+        ">✌️</button>
+    </div>
+
+    <div class="rock">
+      <button onclick="
+       computer = Math.random()*3;
+
+        if (computer >= 1 && computer < 2){
+      computerMove = '✊';
+      }
+      else if (computer >= 2 ){
+        computerMove = '🖐️';
+      }
+      else {
+        computerMove = '✌️';
+      }
+
+
+      if (computerMove === '✊') {
+        result = 'Tie.';
+      } else if (computerMove === '🖐️') {
+        result = 'You Lose.';
+      }else {
+        result = 'You Win.';
+      }
+      document.getElementById('result').innerText = result;
+      document.getElementById('shows').innerText = `You ✊ ${computerMove} Computer`;
+        ">✊</button>
+    </div>
+
+    <div class="paper">
+      <button onclick="
+       computer = Math.random()*3;
+
+      if (computer >= 1 && computer < 2){
+      computerMove = '✊';
+      }
+      else if (computer >= 2 ){
+        computerMove = '🖐️';
+      }
+      else {
+        computerMove = '✌️';
+      }
+
+      if (computerMove === '✊') {
+        result = 'You Win.';
+      } else if (computerMove === '🖐️') {
+        result = 'Tie.';
+      }else {
+        result = 'You Lose.';
+      }
+      document.getElementById('result').innerText = result;
+      document.getElementById('shows').innerText = `You 🖐️ ${computerMove} Computer`;
+        ">🖐️</button>
+    </div>
+  </div>
+  <div id="count"></div>
+  <div id="result"></div>
+  <div id="shows"></div>
+
+</body>
+
+</html>
